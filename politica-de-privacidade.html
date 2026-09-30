@@ -11,6 +11,9 @@
          color: #14141c; background: #f6f6f9; }
   h1 { font-size: 1.9rem; letter-spacing: -0.02em; margin-bottom: .25rem; }
   h2 { font-size: 1.2rem; margin-top: 2.25rem; }
+  /* O padrão do navegador para h3 é 1.17rem — quase o mesmo do h2 daqui, o que
+     apagaria a hierarquia justamente na seção mais longa do documento. */
+  h3 { font-size: 1rem; margin-top: 1.6rem; margin-bottom: .4rem; }
   table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
   th, td { text-align: left; padding: .6rem .7rem; border-bottom: 1px solid #e2e2ea;
            vertical-align: top; }
@@ -28,54 +31,187 @@
 </head>
 <body>
 <h1>Política de Privacidade — TreinoMeu</h1>
-<p><strong>Última atualização:</strong> 11 de setembro de 2026</p>
+<p><strong>Última atualização:</strong> 28 de setembro de 2026</p>
 <h2>Resumo</h2>
-<p>O TreinoMeu não coleta, não transmite e não armazena nenhum dado pessoal fora</p>
-<p>do seu aparelho. O app não tem conta, não tem login, não tem anúncios e não usa</p>
-<p>nenhum serviço de análise ou rastreamento.</p>
+<p>O TreinoMeu não tem conta, não tem login, não tem anúncios e não usa nenhum
+serviço de rastreamento de terceiros. <strong>Os seus treinos continuam no seu
+aparelho</strong> — eles não são enviados para lugar nenhum.</p>
+<p>A partir da versão 1.3, o app envia ao desenvolvedor uma <strong>contagem anônima de
+uso</strong> (quantos treinos, quais exercícios do catálogo, quais telas), para ele
+saber o que melhorar. Essa contagem não leva o seu nome, o seu peso, as suas
+anotações, nem nada que identifique você — e pode ser desligada a qualquer
+momento em <strong>Ajustes › Números de uso</strong>.</p>
+<p>A partir da versão 1.5 existe também o <strong>vínculo com academia</strong>, que é
+<strong>opcional e desligado por padrão</strong>. Só quem cria uma conta e digita o código de
+uma academia passa a enviar dados identificáveis — nome, CPF e as fichas de
+treino — para que o professor daquela academia possa acompanhá-lo. Na 1.6, a
+frequência e as medidas ganharam interruptores próprios, que também nascem
+desligados. Quem não faz nada disso continua sem conta e sem enviar nada além da
+contagem anônima.</p>
+<p>As seções "Números de uso" e "Vínculo com academia" abaixo detalham exatamente o
+que é enviado em cada caso.</p>
 <h2>Que dados o app guarda</h2>
-<p>Tudo o que você registra — treinos, séries, cargas, repetições, fichas, planos,</p>
-<p>recordes e preferências — é gravado em um banco de dados SQLite dentro da área</p>
-<p>privada do app no seu próprio aparelho.</p>
-<p>Esses dados nunca saem do aparelho por iniciativa do app. Não existe servidor</p>
-<p>do TreinoMeu; não há para onde enviar.</p>
-<p>O app <strong>não</strong> acessa: contatos, localização, câmera, microfone, fotos,</p>
-<p>identificadores de publicidade, nem qualquer sensor.</p>
+<p>Tudo o que você registra — treinos, séries, cargas, repetições, fichas, planos,
+recordes e preferências — é gravado em um banco de dados SQLite dentro da área
+privada do app no seu próprio aparelho.</p>
+<p>Esses dados nunca saem do aparelho por iniciativa do app. O que é enviado é
+outra coisa, bem menor, e está descrito em "Números de uso".</p>
+<p>O app <strong>não</strong> acessa: contatos, localização, câmera, microfone, fotos,
+identificadores de publicidade, nem qualquer sensor.</p>
 <h2>Backup</h2>
-<p>Se o backup automático do Android estiver ligado na sua conta Google, o sistema</p>
-<p>operacional pode copiar os dados do app para o Google Drive da sua conta, junto</p>
-<p>com os dados dos seus outros aplicativos. Essa cópia é feita pelo sistema, não</p>
-<p>pelo TreinoMeu, e fica sujeita à Política de Privacidade do Google. Você pode</p>
-<p>desligá-la nas configurações do aparelho, em Sistema › Backup.</p>
+<p>Se o backup automático do Android estiver ligado na sua conta Google, o sistema
+operacional pode copiar os dados do app para o Google Drive da sua conta, junto
+com os dados dos seus outros aplicativos. Essa cópia é feita pelo sistema, não
+pelo TreinoMeu, e fica sujeita à Política de Privacidade do Google. Você pode
+desligá-la nas configurações do aparelho, em Sistema › Backup.</p>
+<h2>Exportar seus dados</h2>
+<p>Em Ajustes › Backup em arquivo você gera um arquivo <code>.json</code> com todos os seus
+treinos e escolhe, na folha de compartilhamento do próprio sistema, o que fazer
+com ele: salvar no aparelho, mandar por e-mail, guardar no Drive. O TreinoMeu
+não envia esse arquivo para lugar nenhum — ele é entregue ao aplicativo que
+você escolher, e a partir daí vale a política de privacidade desse aplicativo.</p>
+<p>O mesmo arquivo pode ser restaurado depois, inclusive num aparelho de outra
+plataforma.</p>
 <h2>Permissões</h2>
-<table><thead><tr><th>Permissão</th><th>Para que serve</th></tr></thead><tbody>
+<table>
+<thead><tr><th>Permissão</th><th>Para que serve</th></tr></thead>
+<tbody>
 <tr><td>Notificações (<code>POST_NOTIFICATIONS</code>)</td><td>Avisar que o descanso entre séries terminou, com o app fechado ou a tela apagada.</td></tr>
 <tr><td>Alarme exato (<code>SCHEDULE_EXACT_ALARM</code>)</td><td>Fazer esse aviso tocar no horário certo. É opcional: sem ela o aviso ainda chega, só que pode atrasar alguns instantes.</td></tr>
 <tr><td>Vibração (<code>VIBRATE</code>)</td><td>Resposta tátil ao concluir uma série e ao fim do descanso.</td></tr>
 <tr><td>Manter o aparelho acordado (<code>WAKE_LOCK</code>)</td><td>Manter a tela ligada durante o treino, se você ativar essa opção nos Ajustes.</td></tr>
 </tbody></table>
-<p>Nenhuma dessas permissões dá acesso a dados pessoais, e nenhuma envia</p>
-<p>informação para fora do aparelho.</p>
+<p>Nenhuma dessas permissões dá acesso a dados pessoais, e nenhuma envia
+informação para fora do aparelho.</p>
+<h2>Números de uso</h2>
+<h3>Por que existe</h3>
+<p>O TreinoMeu é feito por uma pessoa só. Sem nenhuma medida de uso, decidir o que
+melhorar vira adivinhação: não há como saber se um recurso é usado, se uma tela
+confunde, ou se o app quebra em algum aparelho. A contagem anônima existe para
+isso — e para mais nada.</p>
+<h3>O que é enviado</h3>
+<ul>
+<li>Um <strong>identificador de instalação</strong>: um número aleatório sorteado quando você instala o app. Ele não vem do aparelho, não vem da sua conta Google e não tem relação com você. Desinstalar e reinstalar gera outro, sem ligação com o anterior.</li>
+<li><strong>Aparelho e ambiente</strong>: modelo, fabricante, versão do Android, versão do app, idioma, fuso horário e tamanho da tela.</li>
+<li><strong>Contagens de uso</strong>: quantos treinos você começou e terminou, quantas séries, a duração do treino, quais telas foram abertas, se o cronômetro de descanso foi usado ou pulado.</li>
+<li><strong>Quais exercícios do catálogo</strong> foram realizados — os que já vêm com o app, que são de um catálogo público.</li>
+<li><strong>Quantas medidas corporais</strong> você anotou numa vez — só a contagem.</li>
+<li><strong>Mensagens de erro</strong> do próprio app, quando algo falha.</li>
+</ul>
+<h3>O que NUNCA é enviado</h3>
+<ul>
+<li><strong>O seu peso corporal, as suas medidas e a sua disposição.</strong> São dados de saúde, e a lei brasileira (LGPD, art. 11) os trata com proteção reforçada. Ficam no aparelho. Da tela de Evolução sai apenas <em>quantas</em> medidas você anotou — nunca o valor, e nem mesmo <strong>qual</strong> medida você acompanha.</li>
+<li><strong>Nada que você escreveu</strong>: observações de exercício, notas de treino, notas de mudança de ficha.</li>
+<li><strong>O nome dos exercícios que você criou.</strong> Só os do catálogo público viajam, por código. Os seus entram na contagem como "personalizado", sem nome.</li>
+<li><strong>Carga e repetição série a série.</strong> O que viaja é o volume total do treino, somado — não a sua planilha.</li>
+<li><strong>O seu endereço IP.</strong> O país é deduzido do fuso horário do aparelho, que diz "Brasil" e não diz onde você está.</li>
+<li>Contatos, localização, câmera, microfone, fotos, identificador de publicidade.</li>
+</ul>
+<h3>Como desligar</h3>
+<p><strong>Ajustes › Números de uso › Enviar números de uso.</strong> Desligado, o app para de
+registrar e para de enviar na mesma hora. Não há perda de função: o app inteiro
+continua funcionando igual.</p>
+<p>Na primeira vez que você abre a versão 1.3, o app pergunta antes de enviar
+qualquer coisa.</p>
+<h3>Base legal e prazo</h3>
+<p>A base legal é o <strong>legítimo interesse</strong> (LGPD, art. 7º, IX): medir o uso do
+próprio produto, com dado anônimo, sem perfilamento e sem decisão automatizada
+sobre você. Por isso a oposição é livre e imediata (art. 18, §2º) — é o
+interruptor acima.</p>
+<p>Os dados ficam num servidor no Brasil, sob controle do desenvolvedor, e não são
+vendidos, compartilhados nem cedidos a terceiros. Eventos individuais são
+apagados após <strong>24 meses</strong>; o que sobra são totais que não se ligam a nenhuma
+instalação.</p>
+<h3>Apagar o que já foi enviado</h3>
+<p><strong>Ajustes › Dados › Apagar todos os dados</strong> limpa o aparelho e <strong>troca o
+identificador de instalação</strong> por um novo, cortando a ligação com o que foi
+enviado antes. Para pedir a remoção do que já está no servidor, escreva para o
+e-mail no fim desta política informando o identificador — ele aparece na tela de
+Ajustes.</p>
+<h2>Vínculo com academia</h2>
+<p>Esta seção só vale para quem <strong>escolhe</strong> criar uma conta e se vincular a uma
+academia. Sem isso, nada aqui acontece.</p>
+<h3>Por que existe</h3>
+<p>Quem treina numa academia quer receber a ficha do professor no mesmo app em que
+registra o treino, e o professor quer ver como está indo. Para ligar as duas
+pontas é preciso saber quem é quem — e é por isso que, só neste caso, o app
+deixa de ser anônimo.</p>
+<h3>O que é enviado</h3>
+<p>Ao criar a conta:</p>
+<ul>
+<li><strong>CPF</strong> — é o que identifica você para a academia. É o número que ela já tem na ficha de matrícula.</li>
+<li><strong>Nome</strong> e <strong>e-mail</strong> — os dois opcionais. O nome ajuda o professor a reconhecer você na lista; o e-mail serve para recuperar a senha.</li>
+<li><strong>Senha</strong> — guardada como <em>hash</em> (scrypt). Nem o servidor nem o desenvolvedor conseguem ler a sua senha.</li>
+</ul>
+<p>Enquanto houver vínculo ativo com alguma academia:</p>
+<ul>
+<li><strong>As suas fichas de treino</strong> — nome do treino, exercícios, séries, repetições, carga e descanso. Isso é o que o professor precisa ver para orientar.</li>
+<li><strong>As fichas que a academia montou para você</strong>, e as alterações que você fizer nelas — com registro de quem alterou o quê e quando, visível para a academia.</li>
+</ul>
+<h3>O que só vai se você ligar</h3>
+<p>Duas coisas ficam <strong>desligadas por padrão</strong> e só passam a ser enviadas se você
+ligar, no app, em <strong>Academia › O que eu compartilho</strong>. A academia não pode ligar
+por você.</p>
+<p><strong>Frequência.</strong> A academia passa a ver, de cada treino concluído: a <strong>data</strong>, o
+<strong>nome da ficha</strong>, quantos <strong>exercícios</strong> e quantas <strong>séries</strong> você fez, o
+<strong>volume total</strong> (soma de carga × repetições) e a <strong>duração</strong>. Serve para o
+professor saber quem parou de aparecer e quem está treinando pouco.</p>
+<p><strong>Medidas.</strong> As medidas que você anota em Evolução — peso, circunferências e o
+que mais tiver criado — passam a ser vistas pelo professor, com as datas.</p>
+<p><strong>Ficha de saúde.</strong> O que você escreve em <em>Sua ficha de saúde</em> (objetivo,
+lesões, condições de saúde, experiência) é enviado enquanto houver vínculo
+ativo. Ela existe para o professor não prescrever um exercício que te machuque.</p>
+<p>Desligar esconde na hora, inclusive o que já tinha sido enviado — e as medidas e
+a frequência guardadas no servidor são <strong>apagadas</strong>, não só ocultadas.</p>
+<h3>O que continua NÃO sendo enviado</h3>
+<p>Mesmo com conta, vínculo e tudo ligado:</p>
+<ul>
+<li><strong>Carga e repetição série a série.</strong> A academia vê o total do treino, nunca o detalhe de cada série.</li>
+<li><strong>As suas anotações</strong> de sessão e de exercício.</li>
+<li><strong>O seu peso corporal registrado no treino</strong> e o seu nível de disposição.</li>
+</ul>
+<h3>Quem vê</h3>
+<p>Só os gestores da academia a que você está vinculado, e só enquanto o vínculo
+existir. Nenhuma academia vê aluno de outra.</p>
+<h3>Como sair</h3>
+<p><strong>Academia › Sair desta academia</strong> encerra o vínculo. No mesmo instante, a
+cópia das suas fichas, da sua frequência e das suas medidas é apagada do
+servidor. <strong>Academia › Sair da conta</strong>
+remove o vínculo deste aparelho. As fichas que você já recebeu continuam no
+app, como rotinas suas.</p>
+<h3>Base legal e prazo</h3>
+<p>Base legal: <strong>execução de contrato</strong> (art. 7º, V da LGPD) para o vínculo em si
+— você pede, e ele é o serviço prestado. Para a frequência, as medidas e a ficha
+de saúde, que são <strong>dados de saúde</strong> (art. 11), a base é o seu <strong>consentimento
+específico e destacado</strong>: são os interruptores de <em>O que eu compartilho</em>, que
+nascem desligados e podem ser desligados de novo a qualquer momento, sem
+justificativa. Os dados ficam enquanto o vínculo existir.
+Encerrado o vínculo, a cópia das fichas é apagada na hora; a conta permanece
+até você pedir a exclusão pelo e-mail no fim desta política.</p>
 <h2>Internet</h2>
-<p>O app funciona inteiramente offline. Ele não faz requisições de rede em uso</p>
-<p>normal.</p>
+<p>Fora o envio dos números de uso e, para quem se vinculou a uma academia, a
+sincronização descrita acima, o app funciona inteiramente offline. Ele não baixa conteúdo, não consulta anúncios e não conversa com
+nenhum serviço de terceiros.</p>
+<p>Sem rede, nada se perde e nada é enviado: a contagem fica guardada no aparelho
+e sobe na próxima vez que o app abrir com sinal.</p>
 <h2>Crianças</h2>
-<p>O app não é direcionado a crianças e não coleta dados de ninguém — inclusive de</p>
-<p>crianças.</p>
+<p>O app não é direcionado a crianças. A contagem de uso descrita acima é anônima
+e não identifica ninguém, de nenhuma idade.</p>
 <h2>Apagar seus dados</h2>
-<p>Em <strong>Ajustes › Dados › Apagar todos os dados</strong> você remove permanentemente</p>
-<p>todos os treinos, séries, recordes, fichas e planos deste aparelho. Desinstalar</p>
-<p>o app também remove tudo o que está gravado nele.</p>
+<p>Em <strong>Ajustes › Dados › Apagar todos os dados</strong> você remove permanentemente
+todos os treinos, séries, recordes, fichas e planos deste aparelho, esvazia a
+fila de números de uso que ainda não subiu e troca o identificador de
+instalação. Desinstalar o app também remove tudo o que está gravado nele.</p>
 <h2>Conteúdo de terceiros</h2>
-<p>O catálogo de exercícios (nomes, instruções e imagens de demonstração) vem do</p>
-<p>projeto de código aberto <strong>free-exercise-db</strong>, publicado em domínio público sob</p>
-<p>a licença Unlicense. Esse conteúdo é embarcado no app na instalação; não há</p>
-<p>chamada de rede para obtê-lo.</p>
+<p>O catálogo de exercícios (nomes, instruções e imagens de demonstração) vem do
+projeto de código aberto <strong>free-exercise-db</strong>, publicado em domínio público sob
+a licença Unlicense. Esse conteúdo é embarcado no app na instalação; não há
+chamada de rede para obtê-lo.</p>
 <h2>Alterações nesta política</h2>
-<p>Se alguma coisa mudar — por exemplo, se uma versão futura passar a oferecer</p>
-<p>login e sincronização —, esta política será atualizada antes do lançamento</p>
-<p>dessa versão, e a mudança ficará registrada na data acima.</p>
+<p>Se alguma coisa mudar — por exemplo, se uma versão futura passar a oferecer
+login e sincronização —, esta política será atualizada antes do lançamento
+dessa versão, e a mudança ficará registrada na data acima.</p>
 <h2>Contato</h2>
-<p>Dúvidas sobre privacidade: <a href="mailto:gustavoguerino2@gmail.com">gustavoguerino2@gmail.com</a></p>
+<p>Dúvidas sobre privacidade: gustavoguerino2@gmail.com</p>
 </body>
 </html>
